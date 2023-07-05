@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         nombre = prompt(title='Ingrese su nombre', prompt='Nombre')
-        self.txt_nombre.delete(0, 100000)
+        self.txt_nombre.delete(0, tkinter.END)
         self.txt_nombre.insert(0, nombre)
         
     

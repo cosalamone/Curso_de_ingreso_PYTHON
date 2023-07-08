@@ -51,10 +51,7 @@ class App(customtkinter.CTk):
 
 
     def btn_sumar_on_click(self):
-        '''Al presionar el botón  que corresponde a cada operación (suma, resta, multiplicación, y división), 
-        se deberán obtener los valores contenidos en las cajas de texto (txtOperadorA y txtOperadorB), 
-        transformarlos en números enteros, realizar dicha operación y luego mostrar el resultado 
-        de la misma utilizando el Dialog Alert. Ej: "El resultado de la …… es: 755"  '''
+
         operador_a_str = self.txt_operador_a.get()
         operador_b_str = self.txt_operador_b.get()
 
@@ -93,12 +90,12 @@ class App(customtkinter.CTk):
         operador_a_str = self.txt_operador_a.get()
         operador_b_str = self.txt_operador_b.get()
 
-        operador_a_number = int(operador_a_str)
-        operador_b_number = int(operador_b_str)
+        operador_a_number = float(operador_a_str)
+        operador_b_number = float(operador_b_str)
 
         resultado_division = operador_a_number / operador_b_number
 
-        alert(title='Suma', message= f'El resultado de la división es {resultado_division}')
+        alert(title='Suma', message= f'El resultado de la división es {resultado_division:.2f}')
 
         
 if __name__ == "__main__":

@@ -71,7 +71,7 @@ class App(customtkinter.CTk):
 
         resultado_resta = operador_a_number - operador_b_number
 
-        alert(title='Suma', message= f'El resultado de la resta es {resultado_resta}')
+        alert(title='Resta', message= f'El resultado de la resta es {resultado_resta}')
 
 
     def btn_multiplicar_on_click(self):
@@ -83,7 +83,7 @@ class App(customtkinter.CTk):
 
         resultado_multiplicacion = operador_a_number * operador_b_number
 
-        alert(title='Suma', message= f'El resultado de la multiplicación es {resultado_multiplicacion}')
+        alert(title='Multiplicación', message= f'El resultado de la multiplicación es {resultado_multiplicacion}')
 
 
     def btn_dividir_on_click(self):
@@ -95,7 +95,7 @@ class App(customtkinter.CTk):
 
         resultado_division = operador_a_number / operador_b_number
 
-        alert(title='Suma', message= f'El resultado de la división es {resultado_division:.2f}')
+        alert(title='División', message= f'El resultado de la división es {resultado_division:.2f}')
 
         
 if __name__ == "__main__":

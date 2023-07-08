@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Constanza
+apellido: Salamone 
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -49,17 +49,57 @@ class App(customtkinter.CTk):
         self.btn_dividir = customtkinter.CTkButton(master=self, text="Dividir", command=self.btn_dividir_on_click)
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
+
     def btn_sumar_on_click(self):
-        pass
+        '''Al presionar el botón  que corresponde a cada operación (suma, resta, multiplicación, y división), 
+        se deberán obtener los valores contenidos en las cajas de texto (txtOperadorA y txtOperadorB), 
+        transformarlos en números enteros, realizar dicha operación y luego mostrar el resultado 
+        de la misma utilizando el Dialog Alert. Ej: "El resultado de la …… es: 755"  '''
+        operador_a_str = self.txt_operador_a.get()
+        operador_b_str = self.txt_operador_b.get()
+
+        operador_a_number = int(operador_a_str)
+        operador_b_number = int(operador_b_str)
+
+        resultado_suma = operador_a_number + operador_b_number
+
+        alert(title='Suma', message= f'El resultado de la suma es {resultado_suma}')
 
     def btn_restar_on_click(self):
-        pass
+        operador_a_str = self.txt_operador_a.get()
+        operador_b_str = self.txt_operador_b.get()
+
+        operador_a_number = int(operador_a_str)
+        operador_b_number = int(operador_b_str)
+
+        resultado_resta = operador_a_number - operador_b_number
+
+        alert(title='Suma', message= f'El resultado de la resta es {resultado_resta}')
+
 
     def btn_multiplicar_on_click(self):
-        pass
+        operador_a_str = self.txt_operador_a.get()
+        operador_b_str = self.txt_operador_b.get()
+
+        operador_a_number = int(operador_a_str)
+        operador_b_number = int(operador_b_str)
+
+        resultado_multiplicacion = operador_a_number * operador_b_number
+
+        alert(title='Suma', message= f'El resultado de la multiplicación es {resultado_multiplicacion}')
+
 
     def btn_dividir_on_click(self):
-        pass
+        operador_a_str = self.txt_operador_a.get()
+        operador_b_str = self.txt_operador_b.get()
+
+        operador_a_number = int(operador_a_str)
+        operador_b_number = int(operador_b_str)
+
+        resultado_division = operador_a_number / operador_b_number
+
+        alert(title='Suma', message= f'El resultado de la división es {resultado_division}')
+
         
 if __name__ == "__main__":
     app = App()

@@ -49,8 +49,8 @@ class App(customtkinter.CTk):
         operador_b_number = int(operador_b_str)
 
         suma = operador_a_number + operador_b_number
-        suma_str = str(suma)
-        alert(title='Resultado', message= f"El resultado de la sumas es: {suma_str} " )
+        #suma_str = str(suma)
+        alert(title='Resultado', message= f"El resultado de la sumas es: {suma} " )
         
 if __name__ == "__main__":
     app = App()

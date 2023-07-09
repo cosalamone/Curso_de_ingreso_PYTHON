@@ -5,14 +5,20 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Nombre: Constanza
+Apellido: Salamone
+
 Enunciado:
 
-2.	El departamento de Construcción Rural requiere una herramienta que facilite el calculo de materiales necesarios 
-a la hora de realizar un alambrado permetral, se le solicita al usuario que ingrese el ancho y el largo del terreno.
+2.	El departamento de Construcción Rural requiere una herramienta que facilite el calculo de materiales 
+necesarios a la hora de realizar un alambrado permetral, se le solicita al usuario que ingrese el ancho y 
+el largo del terreno.
 
     A. Informar los metros cuadrados del terreno y los metros lineales del perimetro
-    B. Informar la cantidad de postes de quebracho Grueso de 2.4 mts (van cada 250 mts lineales y en las esquinas).
-    C. Informar la cantidad de postes de quebracho Fino de 2.2 mts (van cada 12 mts lineales, si en es lugar no se encuentra el poste grueso).
+    B. Informar la cantidad de postes de quebracho Grueso de 2.4 mts (van cada 250 mts lineales y en las 
+    esquinas).
+    C. Informar la cantidad de postes de quebracho Fino de 2.2 mts (van cada 12 mts lineales, si en es 
+    lugar no se encuentra el poste grueso).
     D. Informar la cantidad de varillas (van cada 2 mts lineales).
     E. Informar la cantidad de alambre alta resistencia 17/15 considerando 7 hilos.
 
@@ -63,7 +69,27 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+        ancho_str = self.txt_ancho.get()
+        largo_str = self.txt_largo.get()
+
+        ancho = float(ancho_str)
+        largo = float(largo_str)
+
+        metros_cuadrados = ancho * largo
+        metros_lineales = (largo + ancho) * 2 
+
+        cantidad_esquinas = 4
+        postes_gruesos = metros_lineales // 250 + cantidad_esquinas
+        postes_finos = metros_lineales // 12
+        cantidad_varillas = metros_lineales // 2
+        cantidad_alambre = metros_lineales * 7
+
+        alert(title='Titulo', message=f""" Los metros cuadrados totales son {metros_cuadrados}, los metros lineales del perímetro son {metros_lineales}
+    La cantidad de postes gruesos son {postes_gruesos}  y la cantidad de los postes finos son {postes_finos}
+    La cantidad de varillas es de {cantidad_varillas}
+    La cantidad de alambre es {cantidad_alambre}""")
+
+
 
 
 if __name__ == "__main__":

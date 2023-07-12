@@ -47,42 +47,49 @@ class App(customtkinter.CTk):
         precio_lampara = 800
         total_sin_desc = cantidad * precio_lampara
 
+        valor_desc = 1
+
 
         if cantidad >= 6: 
-            precio_final = total_sin_desc * 0.5
+            valor_desc = 0.5
+
         else:
             if cantidad == 5:
                 if  marca == 'ArgentinaLuz':
-                    precio_final = total_sin_desc * 0.6
+                    valor_desc = 0.6
                 else:
-                    precio_final = total_sin_desc * 0.7
+                    valor_desc =  0.7
 
             else: 
                 if cantidad == 4:
                     if  marca == 'ArgentinaLuz' or marca == 'FelipeLamparas':
-                        precio_final = total_sin_desc * 0.75
+                        valor_desc =  0.75
                     else: 
-                        precio_final = total_sin_desc * 0.8
+                        valor_desc =  0.8
                 
                 else: 
                     if cantidad == 3:
                         if  marca == 'ArgentinaLuz':
-                            precio_final = total_sin_desc * 0.85
+                            valor_desc =  0.85
                         else:
                             if marca == 'FelipeLamparas':
-                                precio_final = total_sin_desc * 0.90
+                                valor_desc =  0.90
                             else:
-                                precio_final = total_sin_desc * 0.95
+                                valor_desc =  0.95
 
                     else:
                         if cantidad <= 2:
-                            precio_final = total_sin_desc
+                            valor_desc = 1
+        
+        precio_final =  total_sin_desc * valor_desc
+
 
         
         if precio_final > 4000:
-            precio_final = precio_final * 0.95
-        
-        alert(title='Total', message=f'El precio de su compra es {precio_final}')
+            precio_con_desc_extra =  precio_final * 0.95
+            alert(title='Total', message=f'El precio de su compra es {precio_con_desc_extra}')
+        else:
+            alert(title='Total', message=f'El precio de su compra es {precio_final}')
     
 if __name__ == "__main__":
     app = App()

@@ -5,6 +5,9 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+nombre: Constanza
+apellido: Salamone
+
 Todas las lámparas están  al mismo precio de $800 pesos final.
 		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
@@ -38,8 +41,48 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
         
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio_lampara = 800
+        total_sin_desc = cantidad * precio_lampara
+
+
+        if cantidad >= 6: 
+            precio_final = total_sin_desc * 0.5
+        else:
+            if cantidad == 5:
+                if  marca == 'ArgentinaLuz':
+                    precio_final = total_sin_desc * 0.6
+                else:
+                    precio_final = total_sin_desc * 0.7
+
+            else: 
+                if cantidad == 4:
+                    if  marca == 'ArgentinaLuz' or marca == 'FelipeLamparas':
+                        precio_final = total_sin_desc * 0.75
+                    else: 
+                        precio_final = total_sin_desc * 0.8
+                
+                else: 
+                    if cantidad == 3:
+                        if  marca == 'ArgentinaLuz':
+                            precio_final = total_sin_desc * 0.85
+                        else:
+                            if marca == 'FelipeLamparas':
+                                precio_final = total_sin_desc * 0.90
+                            else:
+                                precio_final = total_sin_desc * 0.95
+
+                    else:
+                        if cantidad <= 2:
+                            precio_final = total_sin_desc
+
+        
+        if precio_final > 4000:
+            precio_final = precio_final * 0.95
+        
+        alert(title='Total', message=f'El precio de su compra es {precio_final}')
     
 if __name__ == "__main__":
     app = App()

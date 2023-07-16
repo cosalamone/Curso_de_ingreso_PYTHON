@@ -6,6 +6,9 @@ import customtkinter
 
 
 '''
+Nombre: Constanza
+Apellido: Salamone
+
 Una agencia de viajes nos pide informar si hacemos viajes a lugares según la estación del año. 
 En caso de hacerlo mostrar un alert con el mensaje “Se viaja”, 
 caso contrario mostrar “No se viaja”. 
@@ -41,8 +44,37 @@ class App(customtkinter.CTk):
         self.btn_informar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
         
     
+    '''
+    Una agencia de viajes nos pide informar si hacemos viajes a lugares según la estación del año. 
+    En caso de hacerlo mostrar un alert con el mensaje “Se viaja”, 
+    caso contrario mostrar “No se viaja”. 
+        Si es invierno: solo se viaja a Bariloche
+        Si es verano: se viaja a Mar del plata y Cataratas
+        Si es otoño: se viaja a todos los lugares
+        Si es primavera: se viaja a todos los lugares menos Bariloche
+    '''
     def btn_informar_on_click(self):
-        pass
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+
+        match(estacion):
+            case 'Invierno':
+                if destino == 'Bariloche':
+                    alert(title='utn', message='Se viaja')
+                else: 
+                    alert(title='utn', message='Sólo se viaja a Bariloche')
+            case 'Verano':
+                if destino == 'Mar del planta' or destino == 'Cataratas':
+                    alert(title='utn', message='Sólo se viaja a Bariloche')
+                else:
+                    alert(title='utn', message='Se viaja a Mar del plata y Cataratas')
+            case 'Otoño':
+                alert(title='utn', message='Se viaja a todos los lugares')
+            case 'Primavera':
+                if destino != 'Bariloche':
+                    alert(title='utn', message='Se viaja')
+                else:
+                    alert(title='utn', message='Se viaja a todos los lugares menos Bariloche')
             
     
 if __name__ == "__main__":

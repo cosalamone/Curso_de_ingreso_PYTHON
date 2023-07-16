@@ -56,9 +56,8 @@ class App(customtkinter.CTk):
             genero = prompt(title='utn', prompt='Ingrese su genero ("femenino", "masculino", "otro")')
 
 
-        mensaje= f'usted es {nombre} tiene {edad} de edad y su género es {genero}'
+        mensaje_datos= f'usted es {nombre} tiene {edad} de edad y su género es {genero}. '
 
-        alert('utn', message=mensaje)
 
 #2 -pedir la altura de la persona e informar si es bajo: menor a 140 cm,  
 # medio entre 140 y 170 cm , alto hasta 190 cm y muy alto para mayores a esa altura.
@@ -80,8 +79,11 @@ class App(customtkinter.CTk):
                 else: 
                     tipo_altura = 'muy alto'
         
-        mensaje = f'Usted es {tipo_altura}'
-        alert(title='utn', message=mensaje)
+        mensaje_altura = f'Usted es de estatura {tipo_altura}'
+
+        mensaje_final = f'{mensaje_datos} {mensaje_altura}'
+
+        alert(title='utn', message=mensaje_final)
 
         #CON ELIF
                 # if altura < 140:  # Estructura de control
@@ -94,10 +96,52 @@ class App(customtkinter.CTk):
                 #     tipo_altura = 'muy alto'
 
 
+        #EXCURSIONES 
+        cantidad_excursiones = prompt('utn', prompt='Ingrese la cantidad de excursiones a las que se va a anotar (0-11)')
 
-        
-    
+        while cantidad_excursiones == None or cantidad_excursiones.isdigit() or int(cantidad_excursiones) < 0 or int(cantidad_excursiones) > 11:
+            cantidad_excursiones = prompt('utn', prompt='Ingrese la cantidad de excursiones valida (0-11)')
 
+
+        cantidad_excursiones= int(cantidad_excursiones)
+        contador_excursiones = 0
+        precio_caro = None
+        tipo_mas_caro = ''
+        precio_barato = None
+        tipo_mas_barato = ''
+        promedio_precios = 0
+        suma_precios = 0 
+
+
+# SUMAR A ESTE BUCLE LO QUE PIDE EL EJ 6
+        while contador_excursiones < cantidad_excursiones:
+
+            importe = prompt(title='utn', prompt='Ingrese su importe')
+            while importe == None or not importe.isdigit() or int(importe) < 1 or int(importe) > 100 :
+                importe = prompt(title='utn', prompt='Ingrese su importe')
+            importe = int(importe)
+
+            tipo_exc = prompt(title='utn', prompt='ingrese el tipo de excursion')
+            while tipo_exc != 'caminata' and tipo_exc != 'vehiculo':
+                tipo_exc = prompt(title='utn', prompt='ingrese el tipo de excursion')
+
+            if precio_barato == None or precio_barato > importe:
+                precio_barato = importe
+                tipo_mas_barato = tipo_exc
+            
+            if precio_caro == None or precio_caro < importe:
+                precio_caro = importe
+                tipo_mas_caro = tipo_exc
+
+            suma_precios += importe
+
+            contador_excursiones += 1
+
+        promedio_precios = suma_precios / cantidad_excursiones
+
+        mensaje_precios_excursiones = f'La excursion más barata es de ${precio_barato} y es de {tipo_mas_barato}. La excursion más cara es de ${precio_caro} y es de {tipo_mas_caro}. El promedio de precios es de ${promedio_precios} ' 
+
+        alert(title='utn', message=mensaje_precios_excursiones )
 
 
 if __name__ == "__main__":

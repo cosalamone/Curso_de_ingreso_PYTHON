@@ -29,7 +29,7 @@ class App(customtkinter.CTk):
     def btn_mostrar_iteracion_on_click(self):
         number = 11
         while number > 1:
-            number = number - 1
+            number -=  1
             alert(title='UTN', message=number)
     
     

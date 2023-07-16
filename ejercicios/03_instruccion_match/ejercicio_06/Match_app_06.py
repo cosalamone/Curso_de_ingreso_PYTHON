@@ -6,7 +6,10 @@ import customtkinter
 
 
 '''
-Enunciado:
+Enunciado: ###################### TO-DO #####################
+Nombre: Constanza
+Apellido: Salamone 
+
 Obtener la hora ingresada en el cuadro de texto txt_hora. 
 Al presionar el botón ‘Informar’ mostrar mediante alert alguno de los 
 siguientes mensajes según la hora ingresada:
@@ -32,9 +35,20 @@ class App(customtkinter.CTk):
         self.btn_informar = customtkinter.CTkButton(master=self, text="Informar", command=self.btn_informar_on_click)
         self.btn_informar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
         
-    
+
     def btn_informar_on_click(self):
-        pass
+        hora = int(self.txt_hora.get())
+
+        match(hora):
+            case 7 | 8 | 9 | 10 | 11: 
+                alert(title='mañana', message='Es de mañana')
+            case 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19:
+                alert(title='tarde', message='Es de tarde')
+            case 20 | 21 | 22 |23 |24 | 0 | 1 | 2 | 3 | 4 | 5 | 6:
+                alert(title='noche', message='Es de noche')
+            case _:  
+                alert(title='noche', message='‘La hora no existe’')
+
     
     
 if __name__ == "__main__":

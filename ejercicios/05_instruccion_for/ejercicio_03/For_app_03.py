@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
 
         numeros = range(edad_repetir) 
 
-        for numero in numeros:
+        for i in numeros:
             alert('UTN', 'Hola UTN FRA')
         
     

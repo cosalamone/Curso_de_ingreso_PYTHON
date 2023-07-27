@@ -6,7 +6,14 @@ import customtkinter
 
 
 '''
+ATAJOS Y OTROS
+
 ** SHIFT + TAB para 'destabear'
+
+** print(f'El promedio de edad de platea es {promedio:.1f}') 
+
+############################################################################################################
+
 ESTRUCTURA GRAL 
 
 # INICIALICACIONES
@@ -24,7 +31,9 @@ ESTRUCTURA GRAL
 
 # SALIDA DE DATOS
 
+############################################################################################################
 
+ANOTACIONES TEMAS
 
 --------------------- FOR = FOREACH ---------------------
 Realiza iteraciones sobre una variable iterable (ej: un string, listas, tuplas, range etc)

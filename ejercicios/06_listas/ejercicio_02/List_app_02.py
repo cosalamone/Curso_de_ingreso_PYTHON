@@ -5,6 +5,9 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Nombre: Constanza 
+Apellido: Salamone
+
 Al presionar el botón 'CARGAR' se le solicitarán tres números al usuario mediante el Dialog Prompt, los mismos deberán ser almacenados en un vector lista_datos. 
 Al presionar el botón 'MOSTRAR', se deberán mostrar los números almacenados en el vector utilizando Dialog Alert para informar cada elemento.
 '''
@@ -27,10 +30,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        for i in range(len(self.lista_datos)):
+            alert('utn', self.lista_datos[i])
+
     def btn_cargar_on_click(self):
-        pass
+        self.lista_datos.clear()
+
+        for i in range(3):
+            numero = int(prompt('utn', 'Ingrese un numero'))
+            self.lista_datos.append(numero)
     
 if __name__ == "__main__":
     app = App()

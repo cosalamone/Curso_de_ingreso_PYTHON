@@ -81,6 +81,27 @@ Agrega un elemento al final de la lista
     self.lista_datos.insert(2, 45) --> lista_datos = [6 , 4 , (45), 9 , 4] (el 45 es el nuevo, el 9 es el 
                                     que antes estaba en la posicion 2 y lo desplazó a la 3 --> no lo sobreescribe)
                                     Si la posicion en la que le indico que lo agregue no existe, lo agrega al final de la lista
+
+                                    
+----------------------------------------------------------------------------------------------------
+
+para sacar si n es par
+todos los n pares son los que al / 2 da 0
+si el resto != 0 es impar
+
+se saca el resto con %
+
+----------------------------------------------------------------------------------------------------
+NUMERO PRIMO = aquellos que tienen como divisor 1 y a si mismo ; y de resto de 0
+
+* contador de la cantidad de divisores que tiene
+    if numero (10) 
+
+    
+    if numero % 5 == 0
+    
+
+
 '''
 alumnos = ['Juan', 'Pedro', 'Marta'] # [0, 1, 2] - permite mezclar tipos de datos
 

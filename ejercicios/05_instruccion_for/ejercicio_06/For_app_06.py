@@ -5,6 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
+Nombre: Constanza 
+Apellido: Salamone
 Al presionar el botón Mostrar pedir un número. mostrar los números pares desde 
 el 1 al número ingresado, y mostrar la cantidad de números pares encontrados.
 '''
@@ -22,8 +24,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
         
+        for i in range(10000):
+            numero = prompt('utn', 'Ingrese un numero')
+            numero = int(numero)
+
+            resto= numero % 2
+
+            if resto == 0:
+                pass
     
 if __name__ == "__main__":
     app = App()

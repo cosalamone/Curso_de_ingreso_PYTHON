@@ -6,6 +6,7 @@ import customtkinter
 
 
 '''
+** SHIFT + TAB para 'destabear'
 ESTRUCTURA GRAL 
 
 # INICIALICACIONES
@@ -26,7 +27,7 @@ ESTRUCTURA GRAL
 
 
 --------------------- FOR = FOREACH ---------------------
-Realiza iteraciones sobre una variable iterable (ej: un string, listas, tuplas, etc)
+Realiza iteraciones sobre una variable iterable (ej: un string, listas, tuplas, range etc)
 No tiene la posibilidad de hacer bucles infinitos
 
     numeros = [1,2,3,4,9]

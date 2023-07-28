@@ -95,11 +95,19 @@ se saca el resto con %
 NUMERO PRIMO = aquellos que tienen como divisor 1 y a si mismo ; y de resto de 0
 
 * contador de la cantidad de divisores que tiene
-    if numero (10) 
+    numero = 11
+    cant_divisores = 0
+    for i in range(1, numero + 1):
+        if numero (11) % i == 0:
+            cant_divisores += 1
+    if cant_divisores == 2:
+        print('Es primo')
+    else:
+        print('No es primo)
 
     
     if numero % 5 == 0
-    
+
 
 
 '''

@@ -6,11 +6,17 @@ import customtkinter
 
 
 '''
+############################################################################################################
+
 ATAJOS Y OTROS
 
 ** SHIFT + TAB para 'destabear'
 
 ** print(f'El promedio de edad de platea es {promedio:.1f}') 
+
+Castear: int → float / float → int
+Parsear: str → int
+
 
 ############################################################################################################
 
@@ -34,6 +40,27 @@ ESTRUCTURA GRAL
 ############################################################################################################
 
 ANOTACIONES TEMAS
+
+----------------------- WHILE Condicion:  -----------------------
+contador = 0 
+while(contador):
+    contador += 1
+
+# if x == 5:
+# break → corta el bucle
+# if x % 2 == 0:
+# continue → freno en esta iteración, y vuelvo al while
+else: (poco uso)
+
+contador: se le suma su propio valor más una cte
+acumulador se le suma su propio valor más una variable
+flag/bandera: variable que tiene un valor y después de evaluar una condición, le cambio el valor para que no ingrese de nuevo en el bucle
+validacion se valida el error
+while divisor == 0:
+‘Error ingrese num != 0’
+
+promedio = acumulador/cdor 
+
 
 ----------------------- FOR = FOREACH -----------------------
 Realiza iteraciones sobre una variable iterable (ej: un string, listas, tuplas, range etc)
